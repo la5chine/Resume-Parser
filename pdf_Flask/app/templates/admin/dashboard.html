@@ -1,0 +1,61 @@
+{% extends "admin/templates/admin_template.html" %}
+
+{% block title %}Admin dashboard{% endblock %}
+
+{% block main %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-9">
+      <h1>dashboard</h1>
+      <!-- <p>{{Parsing}}</p> -->
+    </div>
+    <div class="col-3">
+      <form action="/Costumize" method="post">
+        <button class="btn btn-primary" name="Costumize" value="Costumize" name="forwardBtn" type="submit">Costumize Parsing</button>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+
+  <div>{% for candidate in candidates %}
+    <div class="<col>">
+      <hr>
+
+    {% for v in candidate %}
+    {% for k in v %}
+    <h6>{{k}}</h6>
+    <p>{{v[k]}}</p>
+    {% endfor %}
+    {% endfor %}
+    {% endfor %}
+  </div>
+  </div>
+</div>
+</div>
+
+<div class="container">
+  <div class="">
+
+  <div>{% for candidate in Parsing %}
+    <div class="col-3">
+      <hr>
+      <h5>{{candidate}}</h5>
+      {% for Applicant in Parsing[candidate] %}
+      <h6>{{Applicant}}</h6>
+      {% if  Applicant != "Applicant"%}
+      {% for cluster in Parsing[candidate][Applicant] %}
+      <p>{{cluster}} : {{ Parsing[candidate][Applicant][cluster] }}</p>
+      {% endfor %}
+      {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </div>
+  </div>
+</div>
+</div>
+
+
+{% endblock %}

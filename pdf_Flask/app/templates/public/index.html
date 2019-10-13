@@ -1,0 +1,33 @@
+{% extends "public/templates/public_template.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block main %}
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Home</h1>
+    </div>
+  </div>
+</div>
+
+<body class="text-center">
+  <form class="form-signin" style="width: 100%;max-width: 330px; padding: 15px;margin: auto;" action="/submit" method="POST">
+    <h6>Please fill in this form </h6>
+<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+<label for="inputName" class="sr-only">Name</label>
+<input type="text" name="inputName" class="form-control" placeholder="Name" required>
+<label for="inputLName" class="sr-only">Last Name</label>
+<input type="text" name="inputLName" class="form-control" placeholder="Last Name" required>
+<label for="inputEmail" class="sr-only">Email address</label>
+<input type="email" name="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+<label for="file">Choose a resume:</label>
+<input type=file name=file>
+
+<button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+<p class="mt-5 mb-3 text-muted">&copy;Chaker Khachine</p>
+</form>
+</body>
+
+{% endblock %}

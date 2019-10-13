@@ -1,0 +1,40 @@
+{% extends "public/templates/public_template.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% macro details( res,para ) -%}
+
+    <li class="list-group-item">
+      <h5>{{para}}</h5>
+      {% for reslt in res %}
+      {% if reslt is not string %}
+      <p>{{reslt[0]}}</p>
+      {% else %}
+      <p>{{reslt}}</p>
+      {% endif %}
+      {% endfor %}
+    </li>
+{%- endmacro %}
+
+{% block main %}
+
+<div class="container">
+  <div class="form-group">
+  <ul class="list-group list-group-flush">
+    <!-- {{ details(res = res.Email, para = "Email") }}
+    {{ details(res = res.Institution, para = "Institution") }}
+    {{ details(res = res.Skill, para = "Skill") }}
+    {{ details(res = res.Langue, para = "Langue") }}
+    {{ details(res = res.Project, para = "Project") }}
+    {{ details(res = res.PhoneNumber, para = "PhoneNumber") }} -->
+
+    <li class="list-group-item">
+      <p>{{res}}</p>
+      </li>
+  </ul>
+    </div>
+</div>
+<!-- <div class="container">
+  <p>{{data}}</p>
+</div> -->
+{% endblock %}
